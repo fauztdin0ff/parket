@@ -1,0 +1,1017 @@
+/* === Хлебные крошки (используется на статических страницах) === */
+.page-breadcrumbs {
+   --breadcrumbs-gutter: 10px;
+   --breadcrumbs-separator: .25em;
+   margin: 2rem 0;
+   font-size: var(--font-size-text-breadcrumbs)
+}
+
+.page-breadcrumbs .breadcrumbs {
+   display: flex;
+   gap: var(--breadcrumbs-gutter);
+   align-items: center
+}
+
+.page-breadcrumbs .breadcrumbs .nav-item {
+   display: inline-flex;
+   color: var(--text-light);
+   transition: all var(--transition-fast);
+   align-items: center
+}
+
+.page-breadcrumbs .breadcrumbs .nav-item:not(:last-child):after {
+   content: "";
+   width: var(--breadcrumbs-separator);
+   height: var(--breadcrumbs-separator);
+   border-radius: 100%;
+   background-color: var(--text-light);
+   margin-left: var(--breadcrumbs-gutter)
+}
+
+@media(hover:hover)and(pointer:fine) {
+   .page-breadcrumbs .breadcrumbs .nav-item:not([aria-current=page]):hover {
+      color: var(--accent)
+   }
+}
+
+.page-breadcrumbs .breadcrumbs .nav-item:not([aria-current=page]):active {
+   color: var(--accent);
+   transform: scale(.975)
+}
+
+/* === Страница «О компании» === */
+.title-about {
+   --line-height: .8;
+   margin: var(--sections-gutter) 0
+}
+
+.title-about h1,
+.title-about h2 {
+   line-height: var(--line-height);
+   padding-top: calc((1 - var(--line-height)) * 1em)
+}
+
+.grey-card {
+   padding: 2.25rem 1.5rem;
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius)
+}
+
+.grey-card i {
+   color: var(--accent);
+   font-size: 1.5rem
+}
+
+.grey-card.outside-icon p {
+   display: grid;
+   grid-template-columns: 1.5rem 1fr;
+   gap: 1em
+}
+
+.grey-card.icon-inside h3 {
+   display: grid;
+   grid-template-columns: 1.5rem 1fr;
+   gap: 1em;
+   margin-bottom: 1em
+}
+
+@media screen and (max-width:639px) {
+   .grey-card {
+      padding: 1.5rem 1rem
+   }
+
+   .grey-card.outside-icon p {
+      grid-template-columns: 1fr
+   }
+
+   .grey-card.icon-inside h3 {
+      grid-template-columns: 1fr
+   }
+}
+
+.grey-cards-about {
+   --line-height: .8;
+   margin: var(--sections-gutter) 0
+}
+
+.grey-cards-about h2 {
+   line-height: var(--line-height);
+   padding-top: calc((1 - var(--line-height)) * 1em)
+}
+
+@media screen and (max-width:639px) {
+   .grey-cards-about h2 {
+      margin-bottom: var(--cols-gutter)
+   }
+}
+
+.cards-about {
+   --line-height: .8;
+   margin: var(--sections-gutter) 0
+}
+
+.cards-about .title-row {
+   margin-bottom: 3rem
+}
+
+.cards-about .work-list {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: var(--cols-gutter)
+}
+
+.cards-about .work-item {
+   position: relative
+}
+
+.cards-about .work-item .img-wrapper {
+   width: 100%;
+   padding-top: calc(100% / 512 * 343);
+   overflow: hidden;
+   border-radius: var(--card-border-radius);
+   position: relative
+}
+
+.cards-about .work-item .img-wrapper img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   inset: 0;
+   pointer-events: none;
+   object-fit: cover;
+   object-position: center
+}
+
+.cards-about .work-item h3 {
+   font-size: 1.5rem;
+   color: var(--accent);
+   margin: 1em auto .5em
+}
+
+.cards-about .work-item p {
+   color: var(--text-light)
+}
+
+.cards-about .button {
+   margin: var(--cols-gutter) auto 0 auto
+}
+
+@media screen and (max-width:639px) {
+   .cards-about .work-list {
+      grid-template-columns: 1fr;
+      gap: calc(var(--cols-gutter) * 2)
+   }
+
+   .cards-about .button {
+      width: 100%
+   }
+}
+
+/* === Страница «Услуги» === */
+.services-grid {
+   margin: 3rem 0
+}
+
+.services-grid .title-row {
+   margin-bottom: 3rem
+}
+
+.services-grid .title-row h1 {
+   --line-height: .8;
+   color: var(--accent);
+   line-height: var(--line-height);
+   padding-top: calc((1 - var(--line-height)) * 1em)
+}
+
+.services-grid .row {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: var(--cols-gutter)
+}
+
+@media screen and (max-width:959px) {
+   .services-grid .row {
+      grid-template-columns: repeat(3, 1fr)
+   }
+}
+
+@media screen and (max-width:639px) {
+   .services-grid .row {
+      grid-template-columns: repeat(2, 1fr)
+   }
+}
+
+@media screen and (max-width:479px) {
+   .services-grid .row {
+      grid-template-columns: 1fr
+   }
+}
+
+.service-card {
+   --title-fs: 1.125rem;
+   --lh: 1.2;
+   position: relative;
+   border-radius: var(--card-border-radius);
+   overflow: hidden;
+   background-color: var(--white)
+}
+
+.service-card header {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+   padding-top: calc(100% / 275 * 260)
+}
+
+.service-card header img {
+   display: flex;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   transition: all var(--transition-slow);
+   pointer-events: none;
+   object-fit: cover;
+   object-position: center
+}
+
+.service-card .body {
+   padding: 1rem;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem
+}
+
+.service-card h3 {
+   --txt-rows: 2;
+   font-family: var(--font-text);
+   font-size: var(--title-fs);
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   white-space: normal;
+   text-overflow: ellipsis;
+   word-break: break-word;
+   overflow: hidden;
+   -webkit-line-clamp: var(--txt-rows);
+   height: calc(var(--title-fs) * var(--lh) * var(--txt-rows));
+   transition: all var(--transition-slow)
+}
+
+.service-card .button {
+   width: 100%;
+   height: 2.5rem;
+   justify-content: space-between;
+   padding: 0 1em;
+   transition: all var(--transition-slow)
+}
+
+.service-card .button i {
+   transform: rotate(45deg)
+}
+
+.service-card>a {
+   position: absolute;
+   inset: 0;
+   z-index: 5
+}
+
+@media(hover:hover)and(pointer:fine) {
+   .service-card:hover header img {
+      transform: scale(1.125)
+   }
+
+   .service-card:hover h3 {
+      color: var(--accent)
+   }
+
+   .service-card:hover .button {
+      background-color: var(--dark);
+      border-color: var(--dark);
+      color: var(--white)
+   }
+
+   .service-card:hover .button i {
+      transform: rotate(0)
+   }
+}
+
+@media(hover:none)and(pointer:coarse) {
+   .service-card:active .button {
+      background-color: var(--dark);
+      border-color: var(--dark);
+      color: var(--white)
+   }
+
+   .service-card:active .button i {
+      transform: rotate(0)
+   }
+}
+
+@media screen and (max-width:479px) {
+   .service-card h3 {
+      display: inline-block;
+      height: auto
+   }
+}
+
+/* === Детальная страница услуги === */
+.service-page {
+   margin: var(--sections-gutter) 0
+}
+
+.service-text {
+   margin: 3rem 0
+}
+
+.service-text>:is(h1, h2) {
+   --line-height: .8;
+   line-height: var(--line-height);
+   padding-top: calc((1 - var(--line-height)) * 1em);
+   margin: 1em 0;
+   padding-bottom: calc((1 - var(--line-height)) * 1em)
+}
+
+.service-text>:is(p, li) {
+   line-height: 1.5
+}
+
+.service-text>:is(p, ul, ol, li) {
+   margin: 1rem 0
+}
+
+.service-text>img {
+   max-width: 100%;
+   width: 100%;
+   border-radius: var(--card-border-radius)
+}
+
+.service-attention-card {
+   padding: 1.5rem 2.25rem;
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   margin: 3rem 0;
+   display: grid;
+   grid-template-columns: 1.625rem 1fr;
+   align-items: center;
+   gap: .5rem
+}
+
+.service-attention-card i {
+   font-size: 1.625rem;
+   color: var(--accent)
+}
+
+.service-qa-card {
+   padding: 1.5rem 2.25rem;
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   margin: 3rem 0;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem
+}
+
+.service-qa-card .row {
+   display: grid;
+   grid-template-columns: 1.625rem 1fr;
+   gap: .5rem
+}
+
+.service-qa-card i {
+   font-size: 1.625rem;
+   color: var(--accent)
+}
+
+.service-qa-card p {
+   margin: 1rem 0
+}
+
+.service-qa-card p:first-child {
+   margin-top: 0
+}
+
+.service-qa-card p:last-child {
+   margin-bottom: 0
+}
+
+.service-post-table {
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   overflow: hidden;
+   margin-top: 3rem
+}
+
+.service-post-table :is(.title, h3, h4, h5, h6) {
+   font-family: var(--font-text);
+   color: var(--accent)
+}
+
+.service-post-table :is(h4, h5, h6, li, p) {
+   font-size: 1rem
+}
+
+.service-post-table :is(.title, h3) {
+   font-size: 1.125rem
+}
+
+.service-post-table .title {
+   background-color: var(--accent);
+   color: var(--text-color-invert);
+   padding: 1.5rem 2.25rem;
+   font-weight: 500;
+   display: grid;
+   grid-template-columns: 8fr 2fr 2fr;
+   gap: 1rem
+}
+
+.service-post-table h3 {
+   margin: 1.5rem 0
+}
+
+.service-post-table .body ul {
+   display: grid;
+   grid-template-columns: 1fr
+}
+
+.service-post-table .body ul li {
+   display: grid;
+   grid-template-columns: 8fr 2fr 2fr;
+   gap: 1rem;
+   padding: 1rem 2.25rem;
+   border-bottom: 1px solid var(--extra-light-grey)
+}
+
+.service-post-table .body ul:last-child,
+.service-post-table .body ul li:last-child {
+   border-bottom: none
+}
+
+.service-post-table .body>*:last-child {
+   margin-bottom: 1rem
+}
+
+.services-card-list {
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   overflow: hidden;
+   margin-top: 3rem
+}
+
+.services-card-list h3 {
+   font-family: var(--font-text);
+   background-color: var(--accent);
+   color: var(--text-color-invert);
+   padding: 1.5rem 2.25rem;
+   font-weight: 500;
+   font-size: 1.125rem
+}
+
+.services-card-list li {
+   display: grid;
+   grid-template-columns: 1.625rem 1fr;
+   gap: 0 .5rem;
+   padding: 1rem;
+   border-bottom: 1px solid var(--extra-light-grey)
+}
+
+.services-card-list li i {
+   font-size: 1.625rem;
+   color: var(--accent)
+}
+
+.services-card-list li:last-child {
+   border-bottom: none
+}
+
+@media screen and (max-width:639px) {
+   .service-attention-card {
+      padding: 1.5rem 1rem;
+      grid-template-columns: 1fr
+   }
+
+   .service-qa-card {
+      padding: 1.5rem 1rem
+   }
+
+   .service-qa-card .row {
+      grid-template-columns: 1fr
+   }
+
+   .service-post-table .body ul li {
+      gap: .5rem;
+      grid-template-columns: 1fr;
+      padding: 1rem 1.5rem
+   }
+
+   .service-post-table .body ul li>span:last-child {
+      color: var(--accent);
+      font-size: 1.5em
+   }
+
+   .service-post-table .body ul li>span:last-child:after {
+      content: " руб"
+   }
+
+   .service-post-table .body ul li>span:nth-child(2):before {
+      content: "ед. изм. ";
+      font-size: .75em;
+      color: var(--text-light)
+   }
+
+   .services-card-list h3 {
+      text-align: left
+   }
+}
+
+/* === Блог — список статей === */
+.grid-blog {
+   margin: var(--sections-gutter) 0
+}
+
+.grid-blog .row {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: var(--cols-gutter)
+}
+
+@media screen and (max-width:639px) {
+   .grid-blog .row {
+      grid-template-columns: repeat(2, 1fr)
+   }
+}
+
+@media screen and (max-width:479px) {
+   .grid-blog .row {
+      grid-template-columns: 1fr
+   }
+}
+
+.blog-post-card {
+   --title-fs: 1.125rem;
+   --descr-fs: .875rem;
+   --time-fs: .75rem;
+   --lh: 1.2;
+   position: relative;
+   border-radius: var(--card-border-radius);
+   overflow: hidden
+}
+
+.blog-post-card>a {
+   position: absolute;
+   inset: 0;
+   z-index: 5
+}
+
+.blog-post-card header {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+   padding-top: calc(100% / 360 * 260)
+}
+
+.blog-post-card header img {
+   display: flex;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   transition: all var(--transition-slow);
+   pointer-events: none;
+   object-fit: cover;
+   object-position: center
+}
+
+.blog-post-card .body {
+   background-color: var(--light-grey);
+   padding: 1.25rem;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: .75rem
+}
+
+.blog-post-card .body :is(h3, p, time) {
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   white-space: normal;
+   text-overflow: ellipsis;
+   word-break: break-word;
+   overflow: hidden;
+   -webkit-line-clamp: var(--txt-rows)
+}
+
+.blog-post-card .body h3 {
+   --txt-rows: 1;
+   font-size: var(--title-fs);
+   line-height: var(--lh);
+   height: calc(var(--title-fs) * var(--lh) * var(--txt-rows));
+   transition: color var(--transition-slow)
+}
+
+.blog-post-card .body p {
+   --txt-rows: 4;
+   font-size: var(--descr-fs);
+   line-height: var(--lh);
+   color: var(--text-light);
+   height: calc(var(--descr-fs) * var(--lh) * var(--txt-rows))
+}
+
+.blog-post-card .body time {
+   --txt-rows: 1;
+   font-size: var(--time-fs);
+   line-height: var(--lh);
+   margin-top: 1em;
+   color: var(--text-light);
+   opacity: .5
+}
+
+@media(hover:hover)and(pointer:fine) {
+   .blog-post-card:hover header img {
+      transform: scale(1.125)
+   }
+
+   .blog-post-card:hover h3 {
+      color: var(--accent)
+   }
+}
+
+@media(hover:none)and(pointer:coarse) {
+   .blog-post-card h3 {
+      transition: color var(--transition-fast)
+   }
+
+   .blog-post-card:active h3 {
+      color: var(--accent)
+   }
+}
+
+@media screen and (max-width:639px) {
+   .blog-post-card .body {
+      padding: 1rem
+   }
+}
+
+/* === Блог — детальная страница статьи === */
+article.blog-article {
+   margin: var(--sections-gutter) 0
+}
+
+.blog-back-wrapper {
+   margin: 2rem auto 0
+}
+
+.btn-back {
+   font-size: var(--font-size-text-breadcrumbs);
+   display: inline-flex;
+   color: var(--text-light);
+   transition: all var(--transition-fast);
+   cursor: pointer;
+   background: none;
+   border: none;
+   padding: 0
+}
+
+@media(hover:hover)and(pointer:fine) {
+   .btn-back:hover {
+      color: var(--accent)
+   }
+}
+
+.btn-back:active {
+   color: var(--accent);
+   transform: scale(.975)
+}
+
+.blog-post-title h1 {
+   --line-height: .8;
+   color: var(--accent);
+   line-height: var(--line-height);
+   padding-top: calc((1 - var(--line-height)) * 1em);
+   margin-bottom: 3rem
+}
+
+.blog-pots-text :is(h2, h3, h4, h5, h6) {
+   font-family: var(--font-text);
+   font-weight: 500;
+   color: var(--accent);
+   margin-top: 1.5em;
+   margin-bottom: 1em
+}
+
+.blog-pots-text :is(h4, h5, h6, p, ul, ol, li) {
+   font-size: var(--font-size-text)
+}
+
+.blog-pots-text :is(p, ul) {
+   margin-top: 1em;
+   margin-bottom: 1em
+}
+
+.blog-pots-text li {
+   margin-top: .25em;
+   margin-bottom: .25em
+}
+
+.blog-pots-text ol {
+   list-style: auto;
+   list-style-position: inside
+}
+
+.blog-pots-text h2 {
+   font-size: 1.5rem
+}
+
+.blog-pots-text h3 {
+   font-size: 1.25rem
+}
+
+@media screen and (max-width:639px) {
+   .blog-pots-text h2 {
+      font-size: 1.25rem
+   }
+
+   .blog-pots-text h3 {
+      font-size: 1.125rem
+   }
+}
+
+
+.blog-post-table {
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   overflow: hidden;
+   margin-top: 3rem
+}
+
+.blog-post-table :is(h2, h3, h4, h5, h6) {
+   font-family: var(--font-text);
+   color: var(--accent)
+}
+
+.blog-post-table :is(h4, h5, h6, li, p) {
+   font-size: 1rem
+}
+
+.blog-post-table :is(h2, h3) {
+   font-size: 1.125rem
+}
+
+.blog-post-table h2 {
+   background-color: var(--accent);
+   color: var(--text-color-invert);
+   padding: 1.5rem 2.25rem;
+   font-weight: 500;
+   text-align: center
+}
+
+.blog-post-table h3 {
+   margin: 1.5rem 0
+}
+
+/* Таблица параметров через <table> (CKEditor сохраняет table-структуру, span внутри li — нет) */
+.blog-post-table table {
+   width: 100%;
+   border-collapse: collapse
+}
+
+.blog-post-table table tr {
+   border-bottom: 1px solid var(--extra-light-grey)
+}
+
+.blog-post-table table tr:last-child {
+   border-bottom: none
+}
+
+.blog-post-table table td {
+   padding: .875rem 2.25rem;
+   font-size: 1rem;
+   vertical-align: top
+}
+
+.blog-post-table table td:first-child {
+   color: var(--text-light);
+   width: 30%
+}
+
+.blog-post-table table td:last-child {
+   text-align: right
+}
+
+.blog-post-table h3 {
+   margin: 1.5rem 2.25rem .5rem
+}
+
+.blog-card-list {
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   overflow: hidden;
+   margin-top: 3rem
+}
+
+.blog-card-list h2 {
+   font-family: var(--font-text);
+   background-color: var(--accent);
+   color: var(--text-color-invert);
+   padding: 1.5rem 2.25rem;
+   font-weight: 500;
+   text-align: center;
+   font-size: 1.125rem
+}
+
+.blog-card-list li {
+   display: grid;
+   grid-template-columns: 1.625rem 1fr;
+   gap: 0 .5rem;
+   padding: 1rem;
+   border-bottom: 1px solid var(--extra-light-grey)
+}
+
+.blog-card-list li i {
+   font-size: 1.625rem;
+   color: var(--accent)
+}
+
+.blog-card-list li:last-child {
+   border-bottom: none
+}
+
+.blog-attention-card {
+   padding: 1.5rem 2.25rem;
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   margin: 3rem 0;
+   display: grid;
+   grid-template-columns: 1.625rem 1fr;
+   align-items: center;
+   gap: .5rem
+}
+
+.blog-attention-card i {
+   font-size: 1.625rem;
+   color: var(--accent)
+}
+
+.post-img-grid {
+   display: grid;
+   gap: var(--cols-gutter);
+   margin: 3rem 0
+}
+
+.post-img-grid.cols-1 {
+   grid-template-columns: 1fr
+}
+
+.post-img-grid.cols-2 {
+   grid-template-columns: repeat(2, 1fr)
+}
+
+.post-img-grid.cols-3 {
+   grid-template-columns: repeat(3, 1fr)
+}
+
+.post-img-grid img {
+   display: flex;
+   border-radius: var(--card-border-radius);
+   max-width: 100%;
+   width: 100%
+}
+
+@media screen and (max-width:639px) {
+   .blog-post-table h2 {
+      text-align: left
+   }
+
+   .blog-post-table table td {
+      padding: .75rem 1rem
+   }
+
+   .blog-post-table table td:last-child {
+      text-align: left
+   }
+
+   .blog-post-table table td:first-child {
+      width: 40%
+   }
+
+   .blog-post-table h3 {
+      margin: 1.5rem 1rem .5rem
+   }
+
+   .blog-card-list h2 {
+      text-align: left
+   }
+
+   .blog-attention-card {
+      padding: 1.5rem 1rem;
+      grid-template-columns: 1fr
+   }
+
+   .post-img-grid[class*=cols-] {
+      grid-template-columns: 1fr
+   }
+}
+
+/* === Страница 404 / Успех === */
+.sucess-error-page {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: calc(var(--dvh, 1svh) * 100 - var(--hdr-h));
+   min-height: 22.5rem
+}
+
+.sucess-error-page h1 {
+   color: var(--accent);
+   text-align: center;
+   margin: 0 auto;
+   padding-bottom: var(--cols-gutter)
+}
+
+.sucess-error-page .button {
+   margin: 0 auto
+}
+
+/* ====== Страница контактов ====== */
+.contacts-page {
+   margin: 0 0 5rem;
+}
+
+.contacts-card {
+   border: 1px solid var(--light-grey);
+   border-radius: var(--card-border-radius);
+   overflow: hidden;
+   margin-bottom: 1.5rem;
+}
+
+.contacts-card-head {
+   padding: 1rem 1.5rem;
+   color: var(--accent);
+   font-weight: 600;
+   font-size: 0.9375rem;
+   border-bottom: 1px solid var(--light-grey);
+   background: #faf8f5;
+}
+
+.contacts-card-row {
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+   gap: 1.5rem;
+   padding: 0.875rem 1.5rem;
+   border-bottom: 1px solid var(--light-grey);
+}
+
+.contacts-card-row:last-child {
+   border-bottom: none;
+}
+
+.contacts-label {
+   color: var(--text-light);
+   font-size: 0.9375rem;
+   flex-shrink: 0;
+}
+
+.contacts-value {
+   color: var(--dark);
+   font-size: 0.9375rem;
+   text-align: right;
+}
+
+.contacts-link {
+   color: var(--dark);
+   text-decoration: none;
+   transition: color var(--transition-fast);
+}
+
+.contacts-link:hover {
+   color: var(--accent);
+}
+
+.contacts-map {
+   border-radius: var(--card-border-radius);
+   overflow: hidden;
+   margin-top: 0.5rem;
+}
+
+.contacts-map iframe {
+   display: block;
+   width: 100%;
+   height: 450px;
+   border: 0;
+}
+
+@media screen and (max-width: 639px) {
+   .contacts-card-row {
+      flex-direction: column;
+      gap: 0.25rem;
+   }
+
+   .contacts-value {
+      text-align: left;
+   }
+
+   .contacts-map iframe {
+      height: 300px;
+   }
+}

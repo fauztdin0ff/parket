@@ -1,0 +1,422 @@
+@charset "UTF-8";
+
+/**
+ * Компенсация стилей панели администратора Битрикс
+ */
+
+/* Убираем лишние отступы которые панель добавляет к body */
+body {
+   margin-top: 0 !important;
+   padding-top: 0 !important;
+}
+
+/* Панель фиксируется поверх контента */
+#bx-panel {
+   position: fixed !important;
+   top: 0 !important;
+   left: 0 !important;
+   width: 100% !important;
+   z-index: 999999 !important;
+}
+
+/* Шапка сайта учитывает высоту панели */
+body.bx-admin-notb .app-header {
+   top: 0;
+}
+
+/* Ошибки компонентов - показываем только администраторам */
+.bx-core-adm-error {
+   display: block;
+   padding: 0.5rem 1rem;
+   background: #fff3cd;
+   border: 1px solid #ffc107;
+   border-radius: 4px;
+   font-size: 0.875rem;
+   color: #856404;
+   margin: 0.5rem 0;
+}
+
+/* ==============================
+   Формы обратного звонка
+   ============================== */
+
+/* Поле ввода */
+.inpit-block {
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   padding: 0 1rem;
+   height: var(--button-height);
+   display: flex;
+   align-items: center;
+}
+
+.inpit-block input {
+   width: 100%;
+   height: 100%;
+   background: transparent;
+   border: none;
+   outline: none;
+   font-family: var(--font-text);
+   font-size: var(--global-font-size);
+   color: var(--text-color);
+}
+
+.inpit-block input::placeholder {
+   color: var(--dark-grey);
+}
+
+/* Форма callback */
+.callback-form {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem;
+}
+
+.callback-form .form-inpit-wrapper {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem;
+}
+
+.callback-form .form-submit-wrapper {
+   display: grid;
+   grid-template-columns: 5fr 7fr;
+   gap: 1rem;
+   align-items: center;
+}
+
+.callback-form .form-submit-wrapper button {
+   width: 100%;
+}
+
+.callback-form .form-submit-wrapper p {
+   color: var(--text-light);
+   font-size: var(--font-size-text-after-form);
+}
+
+.callback-form .form-submit-wrapper p>a {
+   text-decoration: underline;
+   text-underline-offset: 0.25em;
+}
+
+@media screen and (max-width: 639px) {
+   .callback-form .form-submit-wrapper {
+      grid-template-columns: 1fr;
+   }
+}
+
+/* Секция CTA с формой */
+.cta-form {
+   padding: var(--sections-gutter) 0;
+   background-color: var(--white);
+}
+
+.cta-form .title-row p {
+   color: var(--text-light);
+}
+
+.cta-form .row {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: var(--cols-gutter);
+}
+
+@media screen and (max-width: 959px) {
+   .cta-form .row {
+      grid-template-columns: 1fr;
+   }
+
+   .cta-form .title-row {
+      margin-bottom: var(--cols-gutter);
+   }
+}
+
+/* ==============================
+   Хлебные крошки
+   ============================== */
+
+.page-breadcrumbs {
+   margin: 2rem 0;
+   font-size: var(--font-size-text-breadcrumbs);
+}
+
+.page-breadcrumbs .breadcrumbs {
+   display: flex;
+   gap: 0.375em;
+   align-items: center;
+}
+
+.page-breadcrumbs .breadcrumbs .nav-item {
+   display: inline-flex;
+   color: var(--text-light);
+   transition: all var(--transition-fast);
+   align-items: center;
+}
+
+.page-breadcrumbs .breadcrumbs .nav-item:not(:last-child)::after {
+   content: "";
+   width: 0.25em;
+   height: 0.25em;
+   border-radius: 100%;
+   background-color: var(--text-light);
+   margin-left: 0.375em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+   .page-breadcrumbs .breadcrumbs .nav-item:not([aria-current="page"]):hover {
+      color: var(--accent);
+   }
+}
+
+/* ==============================
+   Страница "Доставка"
+   ============================== */
+
+.delivery-page {
+   margin: var(--sections-gutter) 0;
+}
+
+.delivery-page .container {
+   display: grid;
+   gap: var(--sections-gutter);
+}
+
+.delivery-page .grey-box {
+   padding: 2.25rem 1.5rem;
+   background-color: var(--light-grey);
+   display: grid;
+   grid-template-columns: 1.625rem 1fr;
+   gap: 0.5rem;
+   align-items: center;
+   border-radius: var(--card-border-radius);
+}
+
+.delivery-page .grey-box i {
+   color: var(--accent);
+   font-size: 1.625rem;
+}
+
+.delivery-page .row {
+   display: grid;
+   gap: 1rem;
+}
+
+.delivery-page .row h2 {
+   color: var(--accent);
+}
+
+.hr {
+   background-color: var(--light-grey);
+   width: 100%;
+   height: 1px;
+}
+
+@media screen and (max-width: 639px) {
+   .delivery-page .grey-box {
+      grid-template-columns: 1fr;
+   }
+
+   .delivery-page .grey-box:has(.ph) {
+      grid-template-columns: 1.625rem 1fr;
+   }
+}
+
+/* ==============================
+   Страница "Оплата"
+   ============================== */
+
+.payment-page {
+   margin: 3rem 0;
+}
+
+.payment-page .container {
+   display: grid;
+   gap: var(--cols-gutter);
+}
+
+.grey-card {
+   border-radius: var(--card-border-radius);
+   padding: 2.25rem 1.5rem;
+   background-color: var(--light-grey);
+}
+
+.grey-card ul {
+   display: grid;
+   gap: 0.5em;
+}
+
+.grey-card li {
+   position: relative;
+}
+
+.grey-card li::before {
+   content: "–";
+   display: inline-flex;
+   margin-right: 0.25em;
+}
+
+.grey-card h3 {
+   font-size: var(--font-size-text-large);
+   color: var(--accent);
+   margin-bottom: 1.5rem;
+   display: flex;
+   align-items: center;
+   gap: 0.25em;
+}
+
+.grey-card--credit {
+   display: grid;
+   grid-template-columns: 11.25rem auto;
+   gap: 1rem;
+   font-size: 1rem;
+   align-items: center;
+}
+
+.grey-card--credit img {
+   width: 100%;
+   height: auto;
+   max-width: 11.25rem;
+}
+
+.grey-card--credit p {
+   display: flex;
+   gap: inherit;
+   height: 100%;
+   align-items: center;
+}
+
+.grey-card--credit p::before {
+   content: "";
+   width: 1px;
+   height: 100%;
+   display: flex;
+   background-color: var(--extra-light-grey);
+}
+
+.table-list {
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   overflow: hidden;
+}
+
+.table-list h3,
+.table-list li {
+   padding: 2.25rem 1.5rem;
+}
+
+.table-list h3 {
+   background-color: var(--dark);
+   color: var(--white);
+   font-weight: 500;
+   font-size: 1.125rem;
+}
+
+.table-list li:not(:last-child) {
+   border-bottom: 1px solid var(--extra-light-grey);
+}
+
+.table-list li {
+   --icon-size: 1.625rem;
+   display: grid;
+   grid-template-columns: var(--icon-size) 1fr;
+   gap: 0.5rem;
+}
+
+.table-list li::before {
+   content: "✓";
+   color: var(--accent);
+   font-weight: bold;
+}
+
+.payment-page .list h3 {
+   color: var(--accent);
+   font-size: 1.5rem;
+   margin-bottom: 1.25em;
+}
+
+.payment-page .list ul {
+   padding-left: 3.15em;
+   display: grid;
+   gap: 1rem;
+}
+
+.payment-page .list li::marker {
+   content: attr(data-count);
+   color: var(--accent);
+}
+
+@media screen and (max-width: 639px) {
+
+   .table-list h3,
+   .table-list li {
+      padding: 1.5rem 1rem;
+   }
+
+   .grey-card {
+      padding: 1.5rem 1rem;
+   }
+
+   .grey-card--credit {
+      grid-template-columns: 1fr;
+   }
+
+   .grey-card--credit p {
+      flex-direction: column;
+   }
+
+   .grey-card--credit p::before {
+      width: 100%;
+      height: 1px;
+   }
+}
+
+/* ==============================
+   Текстовые страницы (privacy, return)
+   ============================== */
+
+.text-page {
+   margin: var(--sections-gutter) 0;
+}
+
+.text-editor h1 {
+   font-family: var(--font-text);
+   color: var(--accent);
+   font-size: var(--font-size-text-large);
+   margin-bottom: 2.5rem;
+   display: inline-block;
+}
+
+.text-editor h2,
+.text-editor h3,
+.text-editor h4,
+.text-editor h5,
+.text-editor h6 {
+   font-family: var(--font-text);
+   font-size: var(--font-size-text);
+   margin-bottom: 1.5rem;
+   display: inline-block;
+   font-weight: 500;
+}
+
+.text-editor ol {
+   counter-reset: item;
+}
+
+.text-editor li {
+   margin-bottom: 1em;
+}
+
+.text-editor li::before {
+   counter-increment: item;
+   content: counters(item, ".") ". ";
+}
+
+/* Сообщение об успешной отправке */
+.form-success {
+   padding: 1.5rem;
+   background-color: var(--light-grey);
+   border-radius: var(--card-border-radius);
+   color: var(--accent);
+   font-size: var(--font-size-text-large);
+   text-align: center;
+}
