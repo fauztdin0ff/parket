@@ -57,52 +57,28 @@ html {
 /*==========================================================================
 Header
 ============================================================================*/
-.header-search-col {
-  position: relative;
+.search-suggest {
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
 }
 
-.header-search__results {
-  position: absolute;
-  top: calc(100% + 15px);
-  left: 0;
-  width: 100%;
-  background: #fff;
-  z-index: 55;
-  opacity: 0;
-  pointer-events: none;
-}
-.header-search__results.show {
-  opacity: 1;
-  pointer-events: all;
-}
-.header-search__results a {
-  display: block;
+.search-suggest-item {
+  font-size: 16px;
+  line-height: normal;
   padding: 20px;
-  text-box: trim-both cap alphabetic;
-  transition: all 0.3s ease;
 }
-.header-search__results a span {
+
+.search-suggest-all {
   color: #7d5440;
+  font-size: 16px;
+  line-height: normal;
+  padding: 20px;
 }
 @media (hover: hover) {
-  .header-search__results a:hover {
-    background: #e8e4e2;
+  .search-suggest-all:hover {
+    background: #f4f4f4;
   }
-}
-.header-search__all {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  color: #7d5440;
-}
-.header-search__all i {
-  position: static;
-  transform: rotate(180deg);
-  color: #7d5440;
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
 }
 
 /*==========================================================================
